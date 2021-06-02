@@ -1,9 +1,10 @@
 import Content from "component/Content";
+import Logo from "./Logo";
 
 function App() {
   return (
     <Content>
-      <h1>Welcome</h1>
+      <Logo />
     </Content>
   );
 }
