@@ -1,10 +1,12 @@
 import styled from "styled-components";
-import { ReactComponent as OctoCatIcon } from "assets/octocat.svg";
 import SvgIcon from "component/SvgIcon";
+import { ReactComponent as OctoCatIcon } from "assets/octocat.svg";
 
 const StyledLogo = styled.div`
   display: block;
   position: relative;
+  margin: 0;
+  margin: 0 50px;
 `;
 
 const LogoIcon = styled(SvgIcon)`
@@ -12,7 +14,7 @@ const LogoIcon = styled(SvgIcon)`
   width: 400px;
   height: 400px;
   z-index: 10;
-  left: 50px;
+  left: 30px;
   bottom: 40px;
 `;
 

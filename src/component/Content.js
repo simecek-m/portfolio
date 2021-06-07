@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledContent = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,7 +10,9 @@ const StyledContent = styled.div`
 
 function Content({ children }) {
   return (
-    <StyledContent>{children}</StyledContent>
+    <Wrapper>
+      {children}
+    </Wrapper>
   )
 };
 
