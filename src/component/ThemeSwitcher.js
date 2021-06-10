@@ -1,6 +1,6 @@
-import { useState } from "react";
 import styled from "styled-components";
 import SvgIcon from "./SvgIcon";
+import { useTheme } from "theme/ThemeProvider";
 
 import { ReactComponent as Night } from "assets/night.svg";
 import { ReactComponent as Day } from "assets/day.svg";
@@ -59,10 +59,9 @@ const Wrapper = styled.div`
 
 
 function ThemeSwitcher({ className }) {
-  const [isDarkTheme, setDarkTheme] = useState(false);
-  const switchTheme = () => setDarkTheme(!isDarkTheme)
+  const { theme, switchTheme } = useTheme();
   return(
-    <Wrapper className={className} isDarkTheme={isDarkTheme} onClick={switchTheme}>
+    <Wrapper className={className} isDarkTheme={theme === "dark"} onClick={switchTheme}>
       <NightIcon Icon={Night} />
       <Knob />
       <DayIcon Icon={Day} />

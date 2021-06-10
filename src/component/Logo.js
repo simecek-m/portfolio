@@ -21,7 +21,7 @@ const LogoIcon = styled(SvgIcon)`
 const LogoBackground = styled.div`
   width: 350px;
   height: 350px;
-  background-color: #08ED7B;
+  background-color: var(--color-primary);
   position: absolute;
   transform: rotate(45deg);
   top: 0;
