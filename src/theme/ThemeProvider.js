@@ -5,12 +5,9 @@ const Theme = styled.div`
   color: var(--color-text);
   background: var(--color-background);  
   transition: .6s ease all;
-
-  &.light {
-    --color-text: black;
-    --color-background: white;
-    --color-primary: #08ED7B;
-  }
+  --color-text: black;
+  --color-background: white;
+  --color-primary: #08ED7B;
 
   &.dark {
     --color-text: white;
@@ -30,8 +27,15 @@ export const useTheme = () => {
 }
 
 export default function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState("light");
-  const switchTheme = () => theme === "light" ? setTheme("dark") : setTheme("light");
+  const getThemePreferenceFromStorage = () => {
+    return localStorage.getItem("theme") ?? "light"
+  };
+  const [theme, setTheme] = useState(getThemePreferenceFromStorage());
+  const setThemeAndPersist = theme => {
+    setTheme(theme)
+    localStorage.setItem("theme", theme);
+  };
+  const switchTheme = () => theme === "light" ? setThemeAndPersist("dark") : setThemeAndPersist("light");
   const themeController = {
     switchTheme,
     theme
