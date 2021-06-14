@@ -4,6 +4,7 @@ import 'index.css';
 import App from 'component/App';
 import reportWebVitals from 'reportWebVitals';
 import ThemeProvider from "theme/ThemeProvider";
+import 'i18n';
 
 ReactDOM.render(
   <React.StrictMode>
